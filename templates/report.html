@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>דו״ח ניתוח קוד</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            direction: rtl;
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            max-width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 0 10px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>דו״ח גרפי של ניתוח הקוד</h1>
+    <h2>התפלגות אורכי פונקציות</h2>
+    <img src="{{ histogram }}" alt="היסטוגרמת פונקציות">
+
+    <h2>התפלגות סוגי בעיות</h2>
+    <img src="{{ pie_chart }}" alt="תרשים עוגה של בעיות">
+
+    <h2>מספר בעיות לפי קובץ</h2>
+    <img src="{{ bar_chart }}" alt="תרשים עמודות לפי קובץ">
+</body>
+</html>
