@@ -1,10 +1,10 @@
 # PythonFinallProject
-🎯 Overview
-CodeGuard הוא מערכת ניתוח קוד המשולבת עם פקודת wit push כדי להבטיח שמירה על איכות קוד גבוהה בכל הקומיטים. המערכת מבצעת בדיקות איכות קוד ומחזירה גרפים עם תובנות ונתונים על בעיות בקוד.
+CodeGuard – Code Analysis System
+overview
+CodeGuard is a code analysis system integrated with the wit push command to ensure high code quality in every commit. The system performs code quality checks and returns visual graphs with insights and data about issues in the code.
 
-המערכת מדמה תהליך CI בסיסי, בדגש על איכות קוד.
-
-🛠️ Technologies Used
+This simulates a basic form of Continuous Integration (CI), focused on code quality.
+Technologies used:
 Language: Python
 
 Backend Framework: FastAPI
@@ -12,77 +12,39 @@ Backend Framework: FastAPI
 Code Analysis: ast (Abstract Syntax Tree)
 
 Visualization: matplotlib
-
-📂 Folder Structure
-bash
-CopyEdit
-CodeGuard/
-├── main.py          # FastAPI application
-├── analysis.py      # Code analysis logic (using ast)
-├── visualization.py # Graph generation logic (matplotlib)
-├── alerts.py        # Issue detection logic
-├── requirements.txt # Python dependencies
-├── README.md        # Project documentation (this file)
-└── tests/           # Unit tests for API and logic
-🚀 Installation Instructions
-1️⃣ Clone the repository
-
-bash
-CopyEdit
-git clone https://github.com/HadassaAvimorNew/codeguard.git
-cd codeguard
-2️⃣ Create virtual environment & install dependencies
-
-bash
-CopyEdit
-python -m venv venv
+ Installation Instructions:
+clone the repository
+git clone https://github.com/nechamajobs/server_wit
+cd server_wit
+ Create a virtual environment & install dependencies
+ python -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 
 pip install -r requirements.txt
-3️⃣ Run the server
+ Run the server
+ uvicorn Main:app --reload
+ Server will be available at: http://127.0.0.1:8001
 
-bash
-CopyEdit
-uvicorn main:app --reload
-The server will run at: http://127.0.0.1:8000
+ API Endpoints
 
-🌐 API Endpoints
-Endpoint	Method	Description
-/analyze	POST	מקבל קבצי Python ומחזיר גרפים (PNG)
-/alerts	POST	מקבל קבצי Python ומחזיר התראות על בעיות קוד
+ /analyze POST Accepts Python files and returns analysis graphs (PNG)
+/alerts POST Accepts Python files and returns code issue alerts
 
-Example Request (Using curl)
-bash
-CopyEdit
-curl -X POST -F "file=@example.py" http://127.0.0.1:8000/analyze
-curl -X POST -F "file=@example.py" http://127.0.0.1:8000/alerts
-🔍 Code Quality Checks
-Function Length: התראה אם פונקציה ארוכה מ־20 שורות
+code Quality checks
 
-File Length: התראה אם הקובץ כולו ארוך מ־200 שורות
+Function Length: Warn if a function is longer than 20 lines.
 
-Unused Variables: התראה על משתנים שלא בשימוש
+File Length: Warn if the entire file is longer than 200 lines.
 
-Missing Docstrings: התראה על פונקציות ללא תיעוד
+Unused Variables: Warn if variables are defined but never used.
 
-🏆 Bonus
-✔️ זיהוי משתנים בשמות שאינם באנגלית (כגון בעברית) – והצגת התראה על כך
+Missing Docstrings: Warn if a function has no documentation string.
+ 
+Visualizations
 
-📊 Visualizations
-📉 Histogram – התפלגות אורכי הפונקציות
+Histogram – Distribution of function lengths
 
-🥧 Pie Chart – כמות הבעיות לפי סוג
-
-📊 Bar Chart – כמות הבעיות לפי קובץ
-
-📈 (Bonus) Line Graph – מעקב אחר מספר הבעיות לאורך זמן
-
-📅 Submission
-קוד מלא הועלה לרפוזיטורי GitHub:
-https://github.com/HadassaAvimorNew/codeguard
-פרויקט זה מופץ תחת רישוי MIT.
-
-קישורים שימושיים
-FastAPI Documentation
-Matplotlib Documentation
+ Pie Chart – Number of issues by type
+ 
+ Bar Chart – Number of issues by file
